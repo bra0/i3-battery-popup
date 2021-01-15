@@ -42,9 +42,14 @@ Specify `-n` to use those nice pretty desktop notifications in the top right cor
 
 - `-m` : The message to show to the User
 
+- `-M` : The message to show for high level battery charging
+
 - `-t` : The time interval the script waits before checking the battery again.
       Give this a value in seconds: `10s`, or in minutes: `5m`.
       Default: `5m`
+
+- `-H` : High level battery charging limit                                      
+      Default: 70% 
 
 - `-n` : Use notify-send for desktop notification
 
