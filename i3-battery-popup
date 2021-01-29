@@ -52,7 +52,7 @@ error () {
     exit "$2"
 }
 
-while getopts 's:v:L:l:m:t:s:F:i:nND' opt; do
+while getopts 's:v:L:l:m:t:s:F:i:nND:H:M' opt; do
     case $opt in
         L)
             [[ $OPTARG =~ ^[0-9]+$ ]] || error "${opt}: ${OPTARG} is not a number" 2
@@ -243,7 +243,7 @@ main (){
         else
             # message high charging (default 70%)
             if [[ $PERC -ge HIGH_LIMIT ]]; then
-                show_message "${HIGH_MESSAGE}"
+                show_message "${HIGH_MESSAGE}[${PERC}]"
             fi
 
             # restart messages, reset limits
