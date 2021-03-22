@@ -62,7 +62,7 @@ while getopts 's:v:L:l:m:t:s:F:i:nND:H:M' opt; do
             [[ $OPTARG =~ ^[0-9]+$ ]] || error "${opt}: ${OPTARG} is not a number" 2
             LOWER_LIMIT="${OPTARG}"
             ;;
-            
+
         H)
             [[ $OPTARG =~ ^[0-9]+$ ]] || error "${opt}: ${OPTARG} is not a number" 2
             HIGH_LIMIT="${OPTARG}"
@@ -75,7 +75,7 @@ while getopts 's:v:L:l:m:t:s:F:i:nND:H:M' opt; do
         m)
             MESSAGE="${OPTARG}"
             ;;
-            
+
         n)
             USE_NOTIFY_SEND="y"
             ;;
@@ -172,7 +172,7 @@ show_notify(){
         fi
     fi
     [[ -n $NOTIFY_ICON ]] && NOTIFY_OPT="-i ${NOTIFY_ICON}"
-    notify-send -u critical "${1}" ${NOTIFY_OPT}
+    notify-send -t 5000 -u critical "${1}" ${NOTIFY_OPT}
 }
 
 play_sound(){
